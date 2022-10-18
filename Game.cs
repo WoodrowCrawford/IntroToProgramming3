@@ -31,11 +31,16 @@ namespace HelloWorld
             Console.WriteLine("2. mage");
             Console.WriteLine("3. archer");
 
+            //Used to store the Role variable
+            string role = "";
+
 
             // This variable is used to store health
             float health = 100.0f;
+
             //This variable is used to store mana
             float mana = 20.0f;
+
             // This value is used to heal the player
             float healthRegen = 20;
             float manaRegen = 5;
@@ -48,7 +53,7 @@ namespace HelloWorld
                 Console.Clear();
                 Console.WriteLine(" A knight? This class can take a lot of hits");
 
-
+                role = "Knight";
                 health = 200;
                 mana = 20;
                 damage = 10;
@@ -56,6 +61,8 @@ namespace HelloWorld
             else if (input == '2')
             {
                 Console.WriteLine(" A mage? I love that class!");
+
+                role = "Mage";
                 health = 100;
                 mana = 50;
                 damage = 4;
@@ -63,30 +70,38 @@ namespace HelloWorld
             else if (input == '3')
             {
                 Console.WriteLine(" An archer? I hope you have good aim lmao");
+
+                role = "Archer";
+                health = 90;
+                mana = 20;
+                damage = 20;
             }
             bool maxLevelReached = false;
             int maxDamage = 20;
             int level = 1;
             bool ready = true;
-            Console.WriteLine(health);
+        
             health = health + healthRegen;
 
 
-
+            //Shows the player stats
             Console.WriteLine("Player Name: " + name);
             Console.WriteLine("Player Health: " + health);
             Console.WriteLine("Player Mana: " + mana);
             Console.WriteLine("Player Level: " + level);
-            Console.WriteLine("Player Role:  ");
+            Console.WriteLine("Player Role: " + role);
             Console.WriteLine("Damage Output: " + damage);
-            Console.WriteLine
+            
+
+            //Shows an enemy and gives the player choices
             Console.WriteLine("Oh no a spider suddenly appeared!! What do you want to do?");          
             Console.WriteLine("1. Scream");
             Console.WriteLine("2. Talk to it");
             Console.WriteLine("3 VIBE WITH IT");
+
             char input2 = Console.ReadKey().KeyChar;
             if (input2 == '1')
-            {               
+            {
                 Console.Clear();
                 Console.WriteLine("CONGRATS NOTHING HAPPENED!!!!");
                 Console.WriteLine("...");
@@ -96,10 +111,10 @@ namespace HelloWorld
             {
                 Console.WriteLine("cool");
             }
-
-
-
-
+            else if (input2 == '3')
+            {
+                Console.WriteLine("VIBEEEEEEEEEEE TIMEEE!!!!!!");
+            }
         }
     }
 }
